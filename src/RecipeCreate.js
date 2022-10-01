@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const PIZZA_RECIPE = {
+const INITIAL_STATE = {
   name: "Pizza",
   cuisine: "Italian",
   image:
@@ -14,33 +14,63 @@ function RecipeCreate({ createRecipe }) {
   // TODO: Add the required input and textarea form elements.
   // TODO: Add the required submit and change handlers
 
+  const [recipe, setRecipe] = useState(INITIAL_STATE);
+
+  const handleChange = ({ target }) => {
+    setRecipe({
+      ...recipe,
+      [target.name]: target.value,
+    });
+  };
+
+  const resetForm = () => setRecipe(INITIAL_STATE);
+
   return (
     <form
       name="create"
       onSubmit={(event) => {
         event.preventDefault();
-        createRecipe(PIZZA_RECIPE);
+        createRecipe(INITIAL_STATE);
       }}>
       <table>
         <tbody>
           <tr>
             <td>
-              <input name="name" />
+              <input name="name" onChange={handleChange} />
             </td>
             <td>
-              <input name="cuisine" />
+              <input
+                name="cuisine"
+                value={recipe.cuisine}
+                onChange={handleChange}
+              />
             </td>
             <td>
-              <input name="photo" />
+              <input
+                name="photo"
+                value={recipe.image}
+                onChange={handleChange}
+              />
             </td>
             <td>
-              <textarea name="ingredients" />
+              <textarea
+                name="ingredients"
+                value={recipe.ingredients}
+                onChange={handleChange}
+              />
             </td>
             <td>
-              <textarea name="preparation" />
+              <textarea
+                name="preparation"
+                value={recipe.preparation}
+                onChange={handleChange}
+              />
             </td>
             <td>
               <button type="submit">Create</button>
+              <button onClick={resetForm} type="button">
+                RESET
+              </button>
             </td>
           </tr>
         </tbody>

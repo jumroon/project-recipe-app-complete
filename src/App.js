@@ -47,10 +47,12 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   const createRecipe = (newRecipe) => setRecipes([...recipes, newRecipe]);
+  const clearRecipes = () => setRecipes([]);
 
   return (
     <div className="App">
       <button onClick={() => createRecipe(POKE_RECIPE)}>CREATE RECIPE</button>
+      <button onClick={clearRecipes}>CLEAR RECIPES</button>
       <header>
         <h1>Delicious Food Recipes</h1>
       </header>
