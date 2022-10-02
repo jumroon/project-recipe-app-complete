@@ -14,7 +14,6 @@ function RecipeCreate({ createRecipe }) {
   // TODO: Add the required submit and change handlers
 
   const [recipe, setRecipe] = useState(INITIAL_STATE);
-  const [anotherRecipe, setAnotherRecipe] = useState({});
 
   const handleChange = ({ target }) => {
     console.log(target.name, target.value);
