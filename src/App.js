@@ -44,10 +44,18 @@ const POKE_RECIPE = {
 function App() {
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState(RECIPES);
 
   const createRecipe = (newRecipe) => setRecipes([...recipes, newRecipe]);
   const clearRecipes = () => setRecipes([]);
+  const deleteRecipeAtIndex = (index) => {
+    console.log("index:", index);
+    console.log("recipe at index:", recipes[index]);
+    const recipesCopy = [...recipes];
+    recipesCopy.splice(index, 1);
+    console.log("recipes copy", recipesCopy);
+    setRecipes(recipesCopy);
+  };
 
   return (
     <div className="App">
@@ -56,7 +64,10 @@ function App() {
       <header>
         <h1>Delicious Food Recipes</h1>
       </header>
-      <RecipeList recipes={recipes} />
+      <RecipeList
+        recipes={recipes}
+        onDelete={(index) => deleteRecipeAtIndex(index)}
+      />
       <RecipeCreate createRecipe={createRecipe} />
     </div>
   );

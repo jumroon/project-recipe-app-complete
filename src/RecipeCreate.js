@@ -31,6 +31,7 @@ function RecipeCreate({ createRecipe }) {
       onSubmit={(event) => {
         event.preventDefault();
         createRecipe(recipe);
+        resetForm();
       }}>
       <table>
         <tbody>

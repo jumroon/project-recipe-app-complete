@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 import { RecipeListItem } from "./RecipeListItem";
 
-function RecipeList({ recipes }) {
+function RecipeList({ recipes, onDelete }) {
   // TODO: Display the list of recipes using the structure of table that is provided.
   // TODO: Create at least one additional component that is used by this component.
   // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
 
   const recipeListItems = recipes.map((recipe, index) => (
-    <RecipeListItem key={index} {...recipe} />
+    <RecipeListItem key={index} {...recipe} onDelete={() => onDelete(index)} />
   ));
 
   return (

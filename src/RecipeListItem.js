@@ -1,4 +1,5 @@
 import React from "react";
+import { DeleteButton } from "./DeleteButton";
 
 export function RecipeListItem({
   name,
@@ -6,6 +7,7 @@ export function RecipeListItem({
   image,
   ingredients,
   preparation,
+  onDelete,
 }) {
   return (
     <tr>
@@ -16,7 +18,9 @@ export function RecipeListItem({
       </td>
       <td className="content_td">{ingredients}</td>
       <td className="content_td">{preparation}</td>
-      <td className="content_td">DELETE BUTTON GOES HERE</td>
+      <td className="content_td">
+        <DeleteButton onDelete={onDelete} />
+      </td>
     </tr>
   );
 }
