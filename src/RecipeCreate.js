@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
 const INITIAL_STATE = {
-  name: "Pizza",
-  cuisine: "Italian",
-  image:
-    "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2667,w_4000,x_0,y_0/c_limit,dpr_2,f_auto,fl_lossy,q_80,w_1680/bar-del-corso_Amber-Fouts_MB_1163_aaih9k.jpg",
-  ingredients: "Dough, cheese, salami",
-  preparation: "Bake it",
+  name: "",
+  cuisine: "",
+  image: "",
+  ingredients: "",
+  preparation: "",
 };
 
 function RecipeCreate({ createRecipe }) {
@@ -15,8 +14,10 @@ function RecipeCreate({ createRecipe }) {
   // TODO: Add the required submit and change handlers
 
   const [recipe, setRecipe] = useState(INITIAL_STATE);
+  const [anotherRecipe, setAnotherRecipe] = useState({});
 
   const handleChange = ({ target }) => {
+    console.log(target.name, target.value);
     setRecipe({
       ...recipe,
       [target.name]: target.value,
@@ -30,26 +31,33 @@ function RecipeCreate({ createRecipe }) {
       name="create"
       onSubmit={(event) => {
         event.preventDefault();
-        createRecipe(INITIAL_STATE);
+        createRecipe(recipe);
       }}>
       <table>
         <tbody>
           <tr>
             <td>
-              <input name="name" onChange={handleChange} />
+              <input
+                name="name"
+                value={recipe.name}
+                onChange={handleChange}
+                placeholder="name"
+              />
             </td>
             <td>
               <input
                 name="cuisine"
                 value={recipe.cuisine}
                 onChange={handleChange}
+                placeholder="cuisine"
               />
             </td>
             <td>
               <input
-                name="photo"
+                name="image"
                 value={recipe.image}
                 onChange={handleChange}
+                placeholder="url"
               />
             </td>
             <td>
@@ -57,6 +65,7 @@ function RecipeCreate({ createRecipe }) {
                 name="ingredients"
                 value={recipe.ingredients}
                 onChange={handleChange}
+                placeholder="ingredients"
               />
             </td>
             <td>
@@ -64,6 +73,7 @@ function RecipeCreate({ createRecipe }) {
                 name="preparation"
                 value={recipe.preparation}
                 onChange={handleChange}
+                placeholder="preparation"
               />
             </td>
             <td>
