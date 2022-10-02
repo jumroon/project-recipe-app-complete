@@ -31,6 +31,30 @@ th {
   padding: 10px;
 }
 
+tr:nth-child(even) {
+  background-color: lightyellow;
+}
+
+td:nth-child(n + 6),
+th:nth-child(n + 6) {
+  width: 10%;
+}
+
+td:nth-child(-n + 3),
+th:nth-child(-n + 3) {
+  width: 10%;
+}
+
+td:nth-child(n + 4):not(:last-child),
+th:nth-child(n + 4):not(:last-child) {
+  width: 30%;
+}
+
+/* td:nth-child(n + 3) {
+  border: 2px solid orange;
+  margin-bottom: 1px;
+} */
+
 td {
   letter-spacing: 1px;
   overflow-x: hidden;
