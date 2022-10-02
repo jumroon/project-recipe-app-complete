@@ -4,7 +4,7 @@ import { DeleteButton } from "./DeleteButton";
 export function RecipeListItem({
   name,
   cuisine,
-  image,
+  photo,
   ingredients,
   preparation,
   onDelete,
@@ -14,7 +14,7 @@ export function RecipeListItem({
       <td className="content_td">{name}</td>
       <td className="content_td">{cuisine}</td>
       <td className="content_td">
-        <img src={image} />
+        <img src={photo} />
       </td>
       <td className="content_td">{ingredients}</td>
       <td className="content_td">{preparation}</td>

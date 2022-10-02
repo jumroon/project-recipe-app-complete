@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const INITIAL_STATE = {
   name: "",
   cuisine: "",
-  image: "",
+  photo: "",
   ingredients: "",
   preparation: "",
 };
@@ -53,8 +53,8 @@ function RecipeCreate({ createRecipe }) {
             </td>
             <td>
               <input
-                name="image"
-                value={recipe.image}
+                name="photo"
+                value={recipe.photo}
                 onChange={handleChange}
                 placeholder="url"
               />
