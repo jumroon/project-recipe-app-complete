@@ -102,7 +102,7 @@ describe("App", () => {
       );
     });
 
-    test.only("the name", () => {
+    test("the name", () => {
       expect(screen.queryByText("Just an avocado")).toBeInTheDocument();
     });
 

@@ -44,7 +44,7 @@ const POKE_RECIPE = {
 function App() {
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
-  const [recipes, setRecipes] = useState(RECIPES);
+  const [recipes, setRecipes] = useState(RecipeData);
 
   const createRecipe = (newRecipe) => setRecipes([...recipes, newRecipe]);
   const clearRecipes = () => setRecipes([]);

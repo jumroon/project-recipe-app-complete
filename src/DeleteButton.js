@@ -1,5 +1,9 @@
 import React from "react";
 
 export function DeleteButton({ onDelete }) {
-  return <button onClick={onDelete}>DELETE</button>;
+  return (
+    <button name="delete" onClick={onDelete}>
+      DELETE
+    </button>
+  );
 }
