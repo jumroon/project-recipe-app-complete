@@ -16,7 +16,6 @@ function RecipeCreate({ createRecipe }) {
   const [recipe, setRecipe] = useState(INITIAL_STATE);
 
   const handleChange = ({ target }) => {
-    console.log(target.name, target.value);
     setRecipe({
       ...recipe,
       [target.name]: target.value,
