@@ -59,7 +59,7 @@ function RecipeCreate({ createRecipe }) {
                 placeholder="url"
               />
             </td>
-            <td>
+            <td className="content_td">
               <textarea
                 name="ingredients"
                 value={recipe.ingredients}
@@ -67,7 +67,7 @@ function RecipeCreate({ createRecipe }) {
                 placeholder="ingredients"
               />
             </td>
-            <td>
+            <td className="content_td">
               <textarea
                 name="preparation"
                 value={recipe.preparation}
@@ -78,7 +78,7 @@ function RecipeCreate({ createRecipe }) {
             <td>
               <button type="submit">Create</button>
               <button onClick={resetForm} type="button">
-                RESET
+                RESET FORM
               </button>
             </td>
           </tr>
