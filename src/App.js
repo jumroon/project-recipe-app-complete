@@ -19,6 +19,7 @@ function App() {
   const createRecipe = (newRecipe) => setRecipes([...recipes, newRecipe]);
   const clearRecipes = () => setRecipes([]);
   const deleteRecipeAtIndex = (index) => {
+    console.log(index);
     const recipesCopy = [...recipes];
     recipesCopy.splice(index, 1);
     setRecipes(recipesCopy);
